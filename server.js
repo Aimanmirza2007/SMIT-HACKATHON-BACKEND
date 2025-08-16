@@ -1,22 +1,22 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
 const dbConnect = require("./config/dbConnect");
-const authRoutes = require("./routes/authRoute")
+const authRoutes = require("./routes/authRoute");
 const cors = require("cors");
 
 const app = express();
+
 app.use(
   cors({
-    origin: [
-      "https://smit-hackathon-frontend-m5t2.vercel.app","http://localhost:3000" ],
-     credentials: true,
+    origin: "http://localhost:3000",
+    credentials: true,
   })
 );
 
 dbConnect();
 
 // Middleware
-app.use(express.json());
+app.use(express.json({ limit: "20mb" }));
 
 // Routes
 app.use("/api/auth", authRoutes);
