@@ -8,10 +8,8 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://smit-hackathon-alpha.vercel.app",
-      "http://localhost:3000"
-    ],
-    credentials: true,
+      "https://smit-hackathon-alpha.vercel.app","http://localhost:3000" ],
+     credentials: true,
   })
 );
 
@@ -25,7 +23,7 @@ app.use("/api/auth", authRoutes);
 
 // Server
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`🚀 Sever running on PORT ${PORT}`);
 });
