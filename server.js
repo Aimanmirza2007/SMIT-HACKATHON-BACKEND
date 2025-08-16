@@ -8,7 +8,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://smit-hackathon-alpha.vercel.app/",
+      "https://smit-hackathon-alpha.vercel.app",
       "http://localhost:3000"
     ],
     credentials: true,
