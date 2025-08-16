@@ -5,7 +5,15 @@ const authRoutes = require("./routes/authRoute")
 const cors = require("cors");
 
 const app = express();
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(
+  cors({
+    origin: [
+      "https://smit-hackathon-alpha.vercel.app/",
+      "http://localhost:3000"
+    ],
+    credentials: true,
+  })
+);
 
 dbConnect();
 
